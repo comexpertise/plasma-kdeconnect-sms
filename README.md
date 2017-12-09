@@ -1,3 +1,5 @@
+## Plasma KDE Connect SMS
+
 Tested on Kubuntu 16.10+
 
 ### Demo
