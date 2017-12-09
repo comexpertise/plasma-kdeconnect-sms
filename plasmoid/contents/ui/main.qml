@@ -2,7 +2,6 @@ import QtQuick 2.0
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 1.4
 import QtQuick.Dialogs 1.2
-
 import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.plasmoid 2.0
@@ -10,9 +9,10 @@ import org.kde.kquickcontrolsaddons 2.0
 
 Item {
     id: root
+    width: 250
+    height: 270
     
     Plasmoid.preferredRepresentation: isConstrained() ? Plasmoid.compactRepresentation : Plasmoid.fullRepresentation
-    //Plasmoid.preferredRepresentation: Plasmoid.compactRepresentation
 
     Plasmoid.compactRepresentation: CompactRepresentation {}
     Plasmoid.fullRepresentation: FullRepresentation {}
@@ -21,7 +21,7 @@ Item {
         return (plasmoid.formFactor == PlasmaCore.Types.Vertical || plasmoid.formFactor == PlasmaCore.Types.Horizontal);
     }
 
-    property var deviceName: plasmoid.configuration.device_name
+    property var deviceName: plasmoid.configuration.deviceName
     
     onDeviceNameChanged: {
         update();
@@ -52,26 +52,30 @@ Item {
     
     function update() {
         if (deviceName === '') {
-            plasmoid.setConfigurationRequired(true, 'You need to provide a Device Name');
+            plasmoid.setConfigurationRequired(true, 'You need to provide a Device Name!');
         } else {
             plasmoid.setConfigurationRequired(false);
         }
     }
     
-    function sendSMS(values) {
+    function sendSMS(values, callback) {
         root.update();
         
         if(!deviceName || deviceName === ''){
-            showMessage("You need to provide a Device Name (see plasmoid configuration)");
+            showMessage("Please setup up first (see plasmoid configuration)!");
             return;
         }
         
         if (values.phone !== '' && values.message !== '' && deviceName !== '') {
-            executable.exec('kdeconnect-cli --send-sms "'+values.message+'" --destination "'+values.phone+'" --name "'+deviceName+'"');
-            executable.exec('beep 1');
+                executable.exec("kdeconnect-cli --send-sms '" + values.message + "' --destination '" + values.phone + "' --name '" + deviceName + "'", function() {
+                if(plasmoid.configuration.speakerBeepReps > 0){
+                    executable.exec('beep -l ' + plasmoid.configuration.speakerBeep + ' -f 1000 -r ' + plasmoid.configuration.speakerBeepReps);
+                }
+                callback();
+            });
         }
         else{
-            showMessage("You need to provide a Phone number with your message");
+            showMessage("Please fill all fields (phone number + your message)!");
         }
     }
     

@@ -6,7 +6,13 @@
   <kcfgfile name=""/>
 
   <group name="General">
-    <entry name="device_name" type="string">
+    <entry name="defaultDeviceName" type="string">
+      <default></default>
+    </entry>
+    <entry name="speakerBeep" type="int">
+      <default></default>
+    </entry>
+    <entry name="speakerBeepReps" type="int">
       <default></default>
     </entry>
   </group>
