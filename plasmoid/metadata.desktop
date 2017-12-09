@@ -9,11 +9,10 @@ X-KDE-PluginInfo-Author=David DIVERRES - ComExpertise SARL
 X-KDE-PluginInfo-Email=david@comexpertise.com
 X-KDE-PluginInfo-License=GPL
 X-KDE-PluginInfo-Name=org.kde.comexpertise.kdeconnectkubuntu
-X-KDE-PluginInfo-Version=0.6.0
+X-KDE-PluginInfo-Version=1.0.1
 X-KDE-PluginInfo-Website=https://github.com/comexpertise/kdeconnect-kubuntu
 X-KDE-ServiceTypes=Plasma/Applet
 X-Plasma-API=declarativeappletscript
 X-Plasma-MainScript=ui/main.qml
 X-Plasma-RemoteLocation=
 X-KDE-PluginInfo-Category=Windows and Tasks
-
