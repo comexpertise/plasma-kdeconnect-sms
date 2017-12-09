@@ -1,0 +1,9 @@
+# Makefile
+
+PLASMOID_PLUGIN_NAME := $$(grep "X-KDE-PluginInfo-Name" $(PWD)/plasmoid/metadata.desktop | cut -d'=' -f2)
+PLASMOID_PLUGIN_VERSION := $$(grep "X-KDE-PluginInfo-Version" $(PWD)/plasmoid/metadata.desktop | cut -d'=' -f2)
+PACKAGE_FILE := $(PWD)/$(PLASMOID_PLUGIN_NAME)--v$(PLASMOID_PLUGIN_VERSION).plasmoid
+
+all:
+	cd plasmoid && zip -r $(PACKAGE_FILE) *
+	@echo Built $(PACKAGE_FILE)
