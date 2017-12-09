@@ -1,16 +1,16 @@
 [Desktop Entry]
 Encoding=UTF-8
-Name=KDEConnectKubuntu
-Comment=Plasmoid for KDE Connect allowing SMS sending from your desktop
+Name=KDEConnect SMS
+Comment=Plasmoid (KDE Plasma desktop) connected to KDEConnect allowing SMS sending from your desktop
 Type=Service
 
 X-KDE-ParentApp=
 X-KDE-PluginInfo-Author=David DIVERRES - ComExpertise SARL
 X-KDE-PluginInfo-Email=david@comexpertise.com
 X-KDE-PluginInfo-License=GPL
-X-KDE-PluginInfo-Name=org.kde.comexpertise.kdeconnectkubuntu
-X-KDE-PluginInfo-Version=1.0.1
-X-KDE-PluginInfo-Website=https://github.com/comexpertise/kdeconnect-kubuntu
+X-KDE-PluginInfo-Name=org.kde.comexpertise.plasma.kdeconnect.sms
+X-KDE-PluginInfo-Version=1.0.2
+X-KDE-PluginInfo-Website=https://github.com/comexpertise/plasma-kdeconnect-sms
 X-KDE-ServiceTypes=Plasma/Applet
 X-Plasma-API=declarativeappletscript
 X-Plasma-MainScript=ui/main.qml

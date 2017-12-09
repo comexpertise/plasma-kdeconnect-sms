@@ -1,4 +1,5 @@
-## Plasma KDE Connect SMS
+## Plasma KDEConnect SMS
+#### Plasmoid for KDE Plasma desktop
 
 Tested on Kubuntu 16.10+
 
