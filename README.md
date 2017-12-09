@@ -16,8 +16,8 @@ Tested on Kubuntu 16.10+
 To get and install the latest version:
 
 ```bash
-git clone git@github.com:comexpertise/kdeconnect-kubuntu.git
-cd kdeconnect-kubuntu/build
+git clone git@github.com:comexpertise/plasma-kdeconnect-sms.git
+cd plasma-kdeconnect-sms/build
 cmake -DCMAKE_INSTALL_PREFIX=/usr/ ..
 make
 sudo make install
