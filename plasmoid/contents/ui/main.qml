@@ -39,7 +39,6 @@ Item {
                 implicitHeight: 100
                 Text {
                     id: "dialogMessageText"
-                    text: qsTr(msg)
                     anchors.centerIn: parent
                 }
             }
@@ -47,7 +46,7 @@ Item {
     
     function showMessage(msg){
         dialogMessage.visible = true;
-        dialogMessageText.text = qsTr(msg);
+        dialogMessageText.text = msg;
     }
     
     function update() {
@@ -62,7 +61,7 @@ Item {
         root.update();
         
         if(!deviceName || deviceName === ''){
-            showMessage("Please setup up first (see plasmoid configuration)!");
+            showMessage(qsTr("Please setup up first (see plasmoid configuration)!"));
             return;
         }
         
@@ -75,7 +74,7 @@ Item {
             });
         }
         else{
-            showMessage("Please fill all fields (phone number + your message)!");
+            showMessage(qsTr("Please fill all fields (phone number + your message)!"));
         }
     }
     
