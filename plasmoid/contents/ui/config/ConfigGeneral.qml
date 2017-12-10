@@ -10,7 +10,8 @@ import QtQuick.Dialogs 1.2
 ConfigPage {
     id: page
     
-    property alias cfg_deviceName: defaultDeviceName.text
+    property alias cfg_defaultDeviceName: defaultDeviceName.text
+    property alias cfg_defaultCountryCallingCode: defaultCountryCallingCode.text
     property alias cfg_speakerBeep: speakerBeep.value
     property alias cfg_speakerBeepReps: speakerBeepReps.value
 
@@ -37,6 +38,24 @@ ConfigPage {
         }
     }
     
+    ConfigSection {
+        height: 110;
+        label: i18n("Default country calling code")
+
+        Label {
+            text: i18n("Indicate a default country from https://en.wikipedia.org/wiki/List_of_country_calling_codes")
+            wrapMode: Text.Wrap
+            Layout.fillWidth: true
+        }
+
+        TextField {
+            id: defaultCountryCallingCode
+            Layout.fillWidth: true
+            placeholderText: qsTr("Example: \"+33\" for France")
+            validator: RegExpValidator { regExp: /\+[0-9]{1,5}/ }
+        }
+    }
+
     ConfigSection {
         label: i18n("Invoke a short \"beep\" from internal speaker after SMS send? Indicate the bip duration in milliseconds (1000 = 1 second).")
         
@@ -68,7 +87,7 @@ ConfigPage {
                     //TODO store all found devices and provide select list
                     //TODO Get device ID!
                     executable.exec("/bin/bash -c 'kdeconnect-cli --list-available | grep -Po \"^- ([\\S\\s]+):\\s+\"'", function(deviceNameFound){
-                        cfg_deviceName = deviceNameFound.replace(new RegExp("(^- )|:\\s+", "g"),'');
+                        cfg_defaultDeviceName = deviceNameFound.replace(new RegExp("(^- )|:\\s+", "g"),'');
                         labelDefaultDeviceFound.visible = true;
                     });
                 }

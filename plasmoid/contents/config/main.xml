@@ -9,6 +9,9 @@
     <entry name="defaultDeviceName" type="string">
       <default></default>
     </entry>
+    <entry name="defaultCountryCallingCode" type="string">
+      <default></default>
+    </entry>
     <entry name="speakerBeep" type="int">
       <default></default>
     </entry>
