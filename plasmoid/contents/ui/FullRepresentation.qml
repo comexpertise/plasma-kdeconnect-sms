@@ -35,6 +35,13 @@ Item {
             horizontalAlignment: TextInput.AlignHCenter
             inputMethodHints: Qt.ImhDialableCharactersOnly
             placeholderText: qsTr("Enter phone number");
+            function _onEnterPressed(event)
+            {
+                smsmessage.focus = true;
+            }
+
+            Keys.onReturnPressed: { _onEnterPressed(event) }
+            Keys.onEnterPressed: { _onEnterPressed(event) }
         }
 
         TextArea {
