@@ -21,8 +21,8 @@ Item {
         return (plasmoid.formFactor == PlasmaCore.Types.Vertical || plasmoid.formFactor == PlasmaCore.Types.Horizontal);
     }
 
-    property var deviceName: plasmoid.configuration.deviceName
-    
+    property var deviceName: plasmoid.configuration.defaultDeviceName
+
     onDeviceNameChanged: {
         update();
     }
