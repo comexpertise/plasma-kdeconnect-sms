@@ -6,7 +6,7 @@ import QtGraphicalEffects 1.0
 import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.calendar 2.0 as PlasmaCalendar
-import "../../../plasmoid/libs/libphonenumber-js/libphonenumber-js.min.js" as LibPhoneNumber
+import "../code/libs/libphonenumber-js/libphonenumber-js.min.js" as LibPhoneNumber
 
 Item {
     id: fullRoot
