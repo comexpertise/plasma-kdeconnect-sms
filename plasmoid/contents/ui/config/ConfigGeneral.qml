@@ -57,8 +57,15 @@ ConfigPage {
     }
 
     ConfigSection {
-        label: i18n("Invoke a short \"beep\" from internal speaker after SMS send? Indicate the bip duration in milliseconds (1000 = 1 second).")
+        height: 110;
+        label: i18n("Internal speaker")
         
+        Label {
+            text: i18n("Invoke a short \"beep\" from internal speaker after SMS send? Indicate the bip duration in milliseconds (1000 = 1 second). You need the \"beep\" package (sudo apt-get install beep)")
+            wrapMode: Text.Wrap
+            Layout.fillWidth: true
+        }
+
         SpinBox {
             id: speakerBeep
             Layout.fillWidth: false        
