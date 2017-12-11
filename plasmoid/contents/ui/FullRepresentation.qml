@@ -52,6 +52,10 @@ Item {
             }
 
             onFocusChanged: {
+                if(this.focus){
+                    this.selectAll()
+                }
+
                 if (this.focus || this.text !== "") {
                     this.font.pointSize = 20
                 } else {
