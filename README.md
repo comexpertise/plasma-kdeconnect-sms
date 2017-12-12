@@ -1,7 +1,9 @@
 ## Plasma KDEConnect SMS
 #### Plasmoid for KDE Plasma desktop
 
-Tested on Kubuntu 16.10+
+Tested on:
+- Kubuntu 16.10+
+- openSuSE Leap 43
 
 ### Demo
 <div align="center">
@@ -11,7 +13,7 @@ Tested on Kubuntu 16.10+
 
 ### Requirements
 * [KDE Connect](https://github.com/KDE/kdeconnect-kde) (desktop app) with one paired device
-* Kubuntu 16.x / KDE Plasma
+* KDE Plasma 5.x
 
 ### How to install
 To get and install the latest version:
