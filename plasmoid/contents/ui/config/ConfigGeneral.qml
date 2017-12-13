@@ -21,7 +21,7 @@ ConfigPage {
         if(!plasmoid.configuration.defaultDeviceName || plasmoid.configuration.defaultDeviceName === ''){
             MyComponents.getKDEConnectFirstReachableDevice(defaultDeviceName,
                 function(deviceNameFound){
-                    cfg_defaultDeviceName = "zdd"+deviceNameFound;
+                    cfg_defaultDeviceName = deviceNameFound;
                     labelDefaultDeviceFound.visible = true;
                 }
             );
