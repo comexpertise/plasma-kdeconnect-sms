@@ -7,8 +7,8 @@ Dialog {
     title: "KDE Connect :: SMS Sender"
 
     contentItem: Rectangle {
-        implicitWidth: 400
-        implicitHeight: 100
+        implicitWidth: 500
+        implicitHeight: 120
         Text {
             id: dialogMessageText
             anchors.centerIn: parent
