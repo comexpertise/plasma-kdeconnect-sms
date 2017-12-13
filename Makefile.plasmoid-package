@@ -5,5 +5,7 @@ PLASMOID_PLUGIN_VERSION := $$(grep "X-KDE-PluginInfo-Version" $(PWD)/plasmoid/me
 PACKAGE_FILE := $(PWD)/$(PLASMOID_PLUGIN_NAME)--v$(PLASMOID_PLUGIN_VERSION).plasmoid
 
 all:
-	cd plasmoid && zip -r $(PACKAGE_FILE) *
+	find plasmoid/ \( -name *.qmlc -o -name *.jsc \) -exec rm -f "{}" \; && \
+	cd plasmoid && \
+	zip -r $(PACKAGE_FILE) *
 	@echo Built $(PACKAGE_FILE)
