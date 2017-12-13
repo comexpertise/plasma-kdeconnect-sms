@@ -9,8 +9,7 @@ import "../code/lib/helpers.js" as MyComponents
 import "../lib/"
 
 // TODO
-// Add a contact picker from Akonadi @see https://github.com/comexpertise/plasma-kdeconnect-sms/issues/3 @see https://github.com/dant3/qmlcompletionbox
-// Add to panel as icon @see https://github.com/comexpertise/plasma-kdeconnect-sms/issues/2
+// Add a contacts picker from Akonadi @see https://github.com/comexpertise/plasma-kdeconnect-sms/issues/3 @see https://github.com/dant3/qmlcompletionbox
 
 Item {
     id: root

@@ -8,7 +8,6 @@ Item {
     id: compactRoot
 
     PlasmaCore.IconItem {
-        //system-run
         source: "kdeconnect"
         width: units.iconSizes.medium
         height: units.iconSizes.medium
