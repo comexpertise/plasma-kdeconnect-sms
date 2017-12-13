@@ -6,17 +6,17 @@ import org.kde.plasma.core 2.0 as PlasmaCore
 
 Item {
     id: compactRoot
+    Plasmoid.toolTipMainText: i18n("Send SMS with KDEConnect")
+    Plasmoid.icon: "kdeconnect"
 
     PlasmaCore.IconItem {
-        source: "kdeconnect"
-        width: units.iconSizes.medium
-        height: units.iconSizes.medium
+        source: plasmoid.icon
+        anchors.fill: parent
         active: mouseArea.containsMouse
 
         PlasmaCore.ToolTipArea {
             anchors.fill: parent
             icon: parent.source
-            mainText: "Send SMS with KDEConnect"
         }
 
         MouseArea {
