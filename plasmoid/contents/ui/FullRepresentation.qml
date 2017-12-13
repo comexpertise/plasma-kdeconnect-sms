@@ -7,7 +7,7 @@ import QtQuick.Dialogs 1.2
 import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.core 2.0 as PlasmaCore
 import "../code/lib/libphonenumber-js/libphonenumber-js.min.js" as LibPhoneNumber
-import "../code/lib/helpers.js" as MyComponents
+import "../code/helpers.js" as MyComponents
 
 Item {
     id: fullRoot
