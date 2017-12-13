@@ -1,6 +1,6 @@
-import QtQuick 2.0
-import QtQuick.Controls 1.0
-import QtQuick.Layouts 1.0
+import QtQuick 2.2
+import QtQuick.Controls 1.4
+import QtQuick.Layouts 1.1
 
 // Alternative to GroupBox for when we want the title to always be left aligned.
 Rectangle {
