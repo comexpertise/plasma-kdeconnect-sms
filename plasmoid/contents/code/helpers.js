@@ -12,7 +12,7 @@ function sendSMS(values, callback) {
             getKDEConnectFirstReachableDevice(deviceName, function(deviceNameFound){
                 // check paired phone if connected
                 if(deviceNameFound !== deviceName){
-                    messageDialog.show(qsTr("Your phone \"%1\" is not the only one paired and reachable device (actually: %2). This plamoid can only work with one paired device in KDEConnect.").arg(deviceName).arg(deviceNameFound));
+                    messageDialog.show(qsTr("Your phone \"%1\" is not the only one paired and reachable device (actually: %2).\n\nThis plamoid can only work with one paired device in KDEConnect.").arg(deviceName).arg(deviceNameFound));
                     return;
                 }
 
@@ -24,7 +24,7 @@ function sendSMS(values, callback) {
                 callback();
             });
         }, function(deviceName){
-            messageDialog.show(qsTr("Your phone is not connected, please check paired devices in KDEConnect."));
+            messageDialog.show(qsTr("Your phone is not connected,\nplease check paired devices in KDEConnect."));
         });
     }
     else{
