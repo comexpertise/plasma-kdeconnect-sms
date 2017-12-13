@@ -130,15 +130,17 @@ Item {
             }
         }
 
-        TextArea {
+        PlasmaComponents.TextArea {
             id: smsmessage
             anchors.top: phonenumber.bottom
-            anchors.topMargin: 10
+            anchors.topMargin: 5
+            height: 160
             Layout.fillWidth: true
             inputMethodHints: Qt.ImhNoPredictiveText
             textFormat: TextEdit.PlainText
-            text: qsTr("💬 " + "Your message...")
-            horizontalAlignment: TextInput.AlignHLeft;
+            placeholderText: "💬 " + qsTr("Your message...")
+            horizontalAlignment: TextEdit.AlignHLeft
+            wrapMode: TextEdit.Wrap;
         }
 
         Label {
