@@ -18,12 +18,14 @@ ConfigPage {
     property alias cfg_speakerBeepReps: speakerBeepReps.value
 
     Component.onCompleted: {
-        MyComponents.getKDEConnectFirstReachableDevice(defaultDeviceName,
-            function(deviceNameFound){
-                cfg_defaultDeviceName = deviceNameFound;
-                labelDefaultDeviceFound.visible = true;
-            }
-        );
+        if(!plasmoid.configuration.defaultDeviceName || plasmoid.configuration.defaultDeviceName === ''){
+            MyComponents.getKDEConnectFirstReachableDevice(defaultDeviceName,
+                function(deviceNameFound){
+                    cfg_defaultDeviceName = "zdd"+deviceNameFound;
+                    labelDefaultDeviceFound.visible = true;
+                }
+            );
+        }
     }
 
     ExecuteCommand{

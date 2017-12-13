@@ -11,6 +11,15 @@ import "../code/lib/helpers.js" as MyComponents
 
 Item {
     id: fullRoot
+    Layout.minimumWidth: 250
+    Layout.minimumHeight: 270
+
+    Layout.maximumWidth: Layout.minimumWidth
+    Layout.maximumHeight: Layout.minimumHeight
+
+    Layout.preferredWidth: Layout.minimumWidth
+    Layout.preferredHeight: Layout.minimumHeight
+
 
     Component.onCompleted: {
         root.update();
@@ -54,7 +63,7 @@ Item {
             }
 
             onFocusChanged: {
-                if(this.focus){
+                if(this.focus && this.text !== getPhonePrefix()){
                     this.selectAll()
                 }
 

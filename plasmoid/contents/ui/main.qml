@@ -14,8 +14,6 @@ import "../lib/"
 
 Item {
     id: root
-    width: 250
-    height: 270
 
     Plasmoid.compactRepresentation: CompactRepresentation {}
     Plasmoid.fullRepresentation: FullRepresentation {}
