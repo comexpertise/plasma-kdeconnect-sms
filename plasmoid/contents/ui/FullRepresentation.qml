@@ -3,9 +3,11 @@ import QtQuick.Controls 1.4
 import QtQuick.Layouts 1.1
 import QtQuick.Controls.Styles 1.0
 import QtGraphicalEffects 1.0
+import QtQuick.Dialogs 1.2
 import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.core 2.0 as PlasmaCore
-import "../code/libs/libphonenumber-js/libphonenumber-js.min.js" as LibPhoneNumber
+import "../code/lib/libphonenumber-js/libphonenumber-js.min.js" as LibPhoneNumber
+import "../code/lib/helpers.js" as MyComponents
 
 Item {
     id: fullRoot
@@ -64,7 +66,7 @@ Item {
             }
 
             function getPhonePrefix(){
-                return (plasmoid.configuration.defaultCountryCallingCode ? plasmoid.configuration.defaultCountryCallingCode : null);
+                return (plasmoid.configuration.defaultCountryCallingCode ? plasmoid.configuration.defaultCountryCallingCode : '');
             }
 
             function processPhoneNumberField(fieldObj) {
@@ -144,7 +146,8 @@ Item {
             Layout.alignment: Qt.AlignRight
             text: qsTr("Send SMS") + " ⚡"
             onClicked: {
-                root.sendSMS({
+                root.update();
+                MyComponents.sendSMS({
                                  phone: phonenumber.text,
                                  message: smsmessage.text
                              }, callbackSendSMS)
